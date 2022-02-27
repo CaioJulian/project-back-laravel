@@ -33,8 +33,8 @@ class ProductController extends Controller
             'title' => 'required|string|max:50',
             'type' => 'required|string|max:50',
             'price' => 'required|numeric',
-            'rating' => 'integer',
-            'description' => 'string|max:150'
+            'rating' => 'nullable|integer',
+            'description' => 'nullable|string|max:150'
         ]);
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()], 422);
@@ -71,8 +71,8 @@ class ProductController extends Controller
             'title' => 'required|string|max:50',
             'type' => 'required|string|max:50',
             'price' => 'required|numeric',
-            'rating' => 'integer',
-            'description' => 'string|max:150'
+            'rating' => 'nullable|integer',
+            'description' => 'nullable|string|max:150'
         ]);
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()], 422);
